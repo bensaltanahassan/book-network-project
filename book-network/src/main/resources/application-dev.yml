@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/book_social_network
+    username: postgres
+    password: bensaltana
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: localhost
+    port: 1025
+    username: bensaltana
+    password: bensaltana
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enable: true
+        connectiontimeout: 10000
+        timeout: 10000
+        writetimeout: 10000
+
+application:
+  security:
+    jwt:
+      secret-key: J7bRmzJPOqa3XrF5gEf9mCw0S9HxZtZz0nHuHpIv6Gc=
+      expiration: 86400
+  mailing:
+    frontend:
+      activation-url: http://localhost:4200/activate_account
+  file:
+    upload:
+      photos-output-path: ./uploads
+
+server:
+  port: 8088
