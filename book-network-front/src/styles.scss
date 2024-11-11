@@ -1,0 +1,13 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
+
+.login-container {
+  width: 800px !important;
+  margin-top: 15%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
