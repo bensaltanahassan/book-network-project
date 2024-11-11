@@ -30,13 +30,13 @@ public class BaseEntity {
 
     @CreatedDate
     @Column(updatable = false,nullable = false)
-    private LocalDateTime createdAt;
+    private LocalDateTime createdAt = LocalDateTime.now();
     @LastModifiedDate
     @Column(insertable = false)
     private LocalDateTime updatedAt;
     @CreatedBy
     @Column(updatable = false,nullable = false)
-    private Integer createdBy;
+    private Integer createdBy ;
     @LastModifiedBy
     @Column(insertable = false)
     private Integer updatedBy;

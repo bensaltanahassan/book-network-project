@@ -28,7 +28,6 @@ public interface BookTransactionHistoryRepository extends JpaRepository<BookTran
             SELECT (COUNT(*) > 0) FROM BookTransactionHistory history
             WHERE history.user.id = :userId
             AND history.book.id = :bookId
-            AND history.returned = true
             AND history.returnApproved = false
             """
     )
@@ -38,7 +37,6 @@ public interface BookTransactionHistoryRepository extends JpaRepository<BookTran
             SELECT history FROM BookTransactionHistory history
             WHERE history.book.id = :bookId
             AND history.user.id = :userId
-            AND history.returned = false
             AND history.returnApproved = false
             """
     )
