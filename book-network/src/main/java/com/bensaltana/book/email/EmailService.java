@@ -31,15 +31,15 @@ public class EmailService {
             String subject
     ) throws MessagingException {
         String templateName;
-        if(emailTemplate==null){
-            templateName="confirm-email";
-        }else{
-            templateName=emailTemplate.name();
+        if (emailTemplate == null) {
+            templateName = "confirm-email";
+        } else {
+            templateName = emailTemplate.getName();
         }
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(
                 mimeMessage,
-                MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED,
+                MimeMessageHelper.MULTIPART_MODE_MIXED,
                 StandardCharsets.UTF_8.name()
         );
         Map<String,Object> properties = new HashMap<>();
@@ -50,7 +50,7 @@ public class EmailService {
         Context context = new Context();
         context.setVariables(properties);
 
-        helper.setFrom("lNwP5@example.com");
+        helper.setFrom("bensaltanahassan@gmail.com");
         helper.setTo(to);
         helper.setSubject(subject);
 
